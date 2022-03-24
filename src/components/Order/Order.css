@@ -1,7 +1,11 @@
+.order{
+    position: sticky;
+    top: 0;
+    padding: 20px 0;
+}
 .order-cart{
     text-align: left;
     margin-left: 20px;
-    position: sticky;
 }
 .order-cart p{
     font-size: 18px;
