@@ -1,0 +1,29 @@
+.header{
+    background-color: #1C2B35;
+    padding: 20px 0;
+}
+nav{
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 140px;
+    height: 40px;
+    margin-left: 140px;
+    cursor: pointer;
+}
+.nav-ber{
+    margin-right: 140px;
+}
+.nav-ber a {
+    margin: 0 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+.nav-ber a:hover{
+    color: orange;
+}
