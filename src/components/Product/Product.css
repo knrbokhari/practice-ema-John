@@ -35,5 +35,6 @@
     color: #ffffff;
 }
 .cart-btn p{
+    margin: 0;
     margin-right: 8px;
 }

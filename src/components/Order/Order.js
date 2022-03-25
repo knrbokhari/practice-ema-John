@@ -2,14 +2,21 @@ import React from "react";
 import "./Order.css";
 const Order = (props) => {
   const { cart } = props;
+  let items = 0;
   let price = 0;
   let totalShipping = 0;
   let tax = 0;
   let grandTotal = 0;
 
   for (const product of cart) {
-    price = price + product.price;
-    totalShipping = totalShipping + product.shipping;
+    items = items + product.quantity;
+
+    if (product.quantity === 0) {
+      product.quantity = 1;
+    }
+
+    price = price + product.price * product.quantity;
+    totalShipping = (totalShipping + product.shipping) * product.quantity;
     tax = ((price + totalShipping) * 0.1).toFixed(2);
     grandTotal = price + totalShipping + parseFloat(tax);
   }
@@ -18,7 +25,7 @@ const Order = (props) => {
     <div className="order">
       <h1>Order Summary</h1>
       <div className="order-cart">
-        <p>Selected Items: {cart.length}</p>
+        <p>Selected Items: {items}</p>
         <p>Total Price: ${price}</p>
         <p>Total Shipping Charge: ${totalShipping}</p>
         <p>Tax: ${tax}</p>
