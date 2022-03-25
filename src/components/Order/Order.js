@@ -11,13 +11,17 @@ const Order = (props) => {
   for (const product of cart) {
     items = items + product.quantity;
 
-    if (product.quantity === 0) {
-      product.quantity = 1;
-    }
+    // if (product.quantity === 0) {
+    //   product.quantity = product.quantity + 1;
+    // }
 
+    // if (product.quantity === 1) {
+    //   totalShipping += product.shipping;
+    //   console.log(product);
+    // }
     price = price + product.price * product.quantity;
-    totalShipping = (totalShipping + product.shipping) * product.quantity;
-    tax = ((price + totalShipping) * 0.1).toFixed(2);
+    totalShipping += product.shipping;
+    tax = (price * 0.1).toFixed(2);
     grandTotal = price + totalShipping + parseFloat(tax);
   }
 
